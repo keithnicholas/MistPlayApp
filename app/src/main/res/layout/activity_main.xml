@@ -6,35 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/Ti_Layout"
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchbar"
+
+        style="@style/MaterialSearchBarLight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="18dp">
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:mt_hint="Search Apps"
+        app:mt_maxSuggestionsCount="10"
+        app:mt_speechMode="true" />
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/field"
-            android:layout_width="275dp"
 
-            android:layout_height="wrap_content"
-            android:hint="hint" />
-    </android.support.design.widget.TextInputLayout>
-
-    <TextView
-        android:maxLines="1"
-
-        android:inputType="text"
-
-        android:imeOptions="actionNext"
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:id="@+id/layout_scroll"
+        android:layout_width="369dp"
+        android:layout_height="441dp"
+        android:layout_below="@+id/searchbar"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginBottom="137dp"
-        android:text="TextView" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="321dp"
+        android:layout_height="172dp"
+        android:layout_alignStart="@+id/searchbar"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="85dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Placeholder Template" />
+
 </RelativeLayout>
